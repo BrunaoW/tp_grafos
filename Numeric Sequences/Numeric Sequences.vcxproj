@@ -115,12 +115,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Container.h" />
     <ClInclude Include="Fibonnacci.h" />
+    <ClInclude Include="Lucas.h" />
+    <ClInclude Include="Pell.h" />
+    <ClInclude Include="Pentagonal.h" />
+    <ClInclude Include="Quadrados.h" />
     <ClInclude Include="Seq.h" />
+    <ClInclude Include="Triangular.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Container.cpp" />
     <ClCompile Include="Fibonnacci.cpp" />
+    <ClCompile Include="Lucas.cpp" />
+    <ClCompile Include="Pell.cpp" />
+    <ClCompile Include="Pentagonal.cpp" />
+    <ClCompile Include="Quadrados.cpp" />
     <ClCompile Include="Test.cpp" />
+    <ClCompile Include="Triangular.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

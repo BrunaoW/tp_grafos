@@ -1,7 +1,7 @@
 #pragma once
 #include "Seq.h"
 
-class Fibonnacci : public Seq
+class Triangular : public Seq
 {
 private:
 	static std::vector<unsigned long int> sequence;
@@ -9,8 +9,8 @@ private:
 	unsigned long int compute_element(unsigned value);
 
 public:
-	Fibonnacci();
-	Fibonnacci(unsigned x);
+	Triangular();
+	Triangular(unsigned x);
 	virtual unsigned long int elem(int i);
 	virtual void print(std::ostream& os);
 	virtual int length();
