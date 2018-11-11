@@ -1,21 +1,21 @@
-#include "Fibonnacci.h"
+#include "Lucas.h"
 
 // Static member declaration
-std::vector<unsigned long int> Fibonnacci::sequence;
+std::vector<unsigned long int> Lucas::sequence;
 
-Fibonnacci::Fibonnacci()
+Lucas::Lucas()
 {
 	seq_size = 0;
 }
 
-Fibonnacci::Fibonnacci(unsigned x)
+Lucas::Lucas(unsigned x)
 {
 	seq_size = x;
 	gen_elems(x);
 }
 
 // Index starts at 1.
-unsigned long int Fibonnacci::elem(int i)
+unsigned long int Lucas::elem(int i)
 {
 	if (i < 1)
 	{
@@ -27,25 +27,25 @@ unsigned long int Fibonnacci::elem(int i)
 		gen_elems(i);
 	}
 
-	return sequence.at(i-1);
+	return sequence.at(i - 1);
 }
 
-void Fibonnacci::print(std::ostream& os)
+void Lucas::print(std::ostream& os)
 {
 	for (int i = 0; i < sequence.size(); i++)
 		os << std::to_string(sequence.at(i)) << " ";
 
 	os << "\n";
 }
-int Fibonnacci::length()
+int Lucas::length()
 {
 	//return (int) sequence.size();
-	return (int) seq_size;
+	return (int)seq_size;
 }
 
-void Fibonnacci::gen_elems(int i)
+void Lucas::gen_elems(int i)
 {
-	int start = (int) sequence.size() + 1;
+	int start = (int)sequence.size() + 1;
 	for (int j = start; j <= i; j++)
 	{
 		unsigned long int fib_j = compute_element(j);
@@ -55,9 +55,10 @@ void Fibonnacci::gen_elems(int i)
 	if (i > seq_size) seq_size = i;
 }
 
-unsigned long int Fibonnacci::compute_element(unsigned value)
+unsigned long int Lucas::compute_element(unsigned value)
 {
-	if (value == 1 || value == 2) return 1;
+	if (value == 1) return 1;
+	else if (value == 2) return 3;
 
 	value--;
 	return sequence[value - 1] + sequence[value - 2];
