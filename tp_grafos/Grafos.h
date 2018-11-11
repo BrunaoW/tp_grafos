@@ -9,7 +9,8 @@ class Grafo {
 	int numVertices;
 	int numArestas;
 	vector<vector<int>> matrizAdj;
-public:
+
+	public:
 	Grafo(int);
 	~Grafo();
 	bool inserirAresta(int v, int w);
@@ -20,6 +21,7 @@ public:
 	void imprimirMatrizAdj();
 	bool verificarGrafoCompleto();
 	void completarGrafo();
+	void buscaEmLargura(int verticeInicial);
 };
 
 #endif

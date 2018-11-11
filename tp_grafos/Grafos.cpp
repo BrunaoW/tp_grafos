@@ -1,6 +1,8 @@
 #include "Grafos.h"
 
 #include <iostream>
+#include <vector>
+#include <queue>
 
 using namespace std;
 
@@ -85,6 +87,32 @@ void Grafo::completarGrafo() {
 		for (j = i + 1; j < numVertices; j++) {
 			if (matrizAdj[i][j] == 0) {
 				inserirAresta(i, j);
+			}
+		}
+	}
+}
+
+void Grafo::buscaEmLargura(int verticeInicial) {
+	queue<int> filaDeVisita;
+	vector<bool> visitados;
+
+	for (int i = 0; i < numVertices; i++) {
+		visitados.push_back(false);
+	}
+
+	cout << "Visitando vertice " << verticeInicial << endl;
+	visitados[verticeInicial] = true;
+	filaDeVisita.push(verticeInicial);
+
+	while (!filaDeVisita.empty()) {
+		int verticeAtual = filaDeVisita.front();
+		filaDeVisita.pop();
+
+		for (int verticeVisitado = 0; verticeVisitado < numVertices; verticeVisitado++) {
+			if (verticeAtual != verticeVisitado && matrizAdj[verticeAtual][verticeVisitado] == 1 && !visitados[verticeVisitado]) {
+				cout << "Visitando vertice " << verticeVisitado << endl;
+				visitados[verticeVisitado] = true;
+				filaDeVisita.push(verticeVisitado);
 			}
 		}
 	}
