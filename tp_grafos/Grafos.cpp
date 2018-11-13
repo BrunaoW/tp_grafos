@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <stack>
 
 using namespace std;
 
@@ -114,6 +115,51 @@ void Grafo::buscaEmLargura(int verticeInicial) {
 				visitados[verticeVisitado] = true;
 				filaDeVisita.push(verticeVisitado);
 			}
+		}
+	}
+
+	cout << endl;
+}
+
+void Grafo::buscaEmProfundidade(int verticeInicial) {
+	stack<int> pilhaDeVisita;
+	vector<bool> visitados;
+
+	for (int i = 0; i < numVertices; i++) {
+		visitados.push_back(false);
+	}
+
+	int verticeAtual = verticeInicial;
+	int verticeVisitado;
+
+	while(true) {
+		if (!visitados[verticeAtual]) {
+			cout << "Visitando Vertice " << verticeAtual << endl;
+			visitados[verticeAtual] = true;
+			pilhaDeVisita.push(verticeAtual);
+		}
+
+		bool encontrouVerticeVizinho = false;
+
+		for (verticeVisitado = 0; verticeVisitado < numVertices; verticeVisitado++) {
+			if (verticeAtual != verticeVisitado && matrizAdj[verticeAtual][verticeVisitado] == 1 && !visitados[verticeVisitado]) {
+				encontrouVerticeVizinho = true;
+				break;
+			}
+		}
+
+		if (encontrouVerticeVizinho) {
+			verticeAtual = verticeVisitado;
+		}
+		else {
+			pilhaDeVisita.pop();
+
+			if (pilhaDeVisita.empty()) {
+				cout << endl;
+				break;
+			}
+
+			verticeAtual = pilhaDeVisita.top();
 		}
 	}
 }

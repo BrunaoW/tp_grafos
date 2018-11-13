@@ -22,6 +22,7 @@ class Grafo {
 	bool verificarGrafoCompleto();
 	void completarGrafo();
 	void buscaEmLargura(int verticeInicial);
+	void buscaEmProfundidade(int verticeInicial);
 };
 
 #endif

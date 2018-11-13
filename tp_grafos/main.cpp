@@ -14,7 +14,9 @@ int main() {
 
 	g1.imprimirMatrizAdj();
 
-	g1.buscaEmLargura(2);
+	g1.buscaEmLargura(0);
+
+	g1.buscaEmProfundidade(0);
 
 	system("pause");
 
