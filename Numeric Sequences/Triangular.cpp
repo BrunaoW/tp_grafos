@@ -6,12 +6,16 @@ std::vector<unsigned long int> Triangular::sequence;
 Triangular::Triangular()
 {
 	seq_size = 0;
+	seq_type = "Triangular";
+
 }
 
 Triangular::Triangular(unsigned x)
 {
 	seq_size = x;
 	gen_elems(x);
+	seq_type = "Triangular";
+
 }
 
 // Index starts at 1.

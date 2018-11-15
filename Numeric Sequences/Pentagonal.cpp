@@ -6,12 +6,16 @@ std::vector<unsigned long int> Pentagonal::sequence;
 Pentagonal::Pentagonal()
 {
 	seq_size = 0;
+	seq_type = "Pentagonal";
+
 }
 
 Pentagonal::Pentagonal(unsigned x)
 {
 	seq_size = x;
 	gen_elems(x);
+	seq_type = "Pentagonal";
+
 }
 
 // Index starts at 1.

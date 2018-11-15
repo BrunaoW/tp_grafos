@@ -15,6 +15,7 @@ public:
 	virtual unsigned long int elem(int i) = 0 ; 
 	virtual void print(std::ostream& os) = 0;
 	virtual int length() = 0;
+	std::string seq_type;
 };
 
 std::ostream& operator<< (std::ostream& stream, Seq& obj);
