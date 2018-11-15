@@ -6,12 +6,16 @@ std::vector<unsigned long int> Quadrados::sequence;
 Quadrados::Quadrados()
 {
 	seq_size = 0;
+	seq_type = "Quadrados";
+
 }
 
 Quadrados::Quadrados(unsigned x)
 {
 	seq_size = x;
 	gen_elems(x);
+	seq_type = "Quadrados";
+
 }
 
 // Index starts at 1.

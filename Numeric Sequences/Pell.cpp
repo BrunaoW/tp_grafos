@@ -6,12 +6,16 @@ std::vector<unsigned long int> Pell::sequence;
 Pell::Pell()
 {
 	seq_size = 0;
+	seq_type = "Pell";
+
 }
 
 Pell::Pell(unsigned x)
 {
 	seq_size = x;
 	gen_elems(x);
+	seq_type = "Pell";
+
 }
 
 // Index starts at 1.
