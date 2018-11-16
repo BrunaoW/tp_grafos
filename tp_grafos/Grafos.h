@@ -6,8 +6,10 @@
 using namespace std;
 
 class Grafo {
-	int numVertices;
-	int numArestas;
+	int _numVertices = 0;
+	int _numArestas = 0;
+	int _componentesConectados = 0;
+	bool _grafoPercorrido = false;
 	vector<vector<int>> matrizAdj;
 
 	public:
@@ -23,6 +25,8 @@ class Grafo {
 	void completarGrafo();
 	void buscaEmLargura(int verticeInicial);
 	void buscaEmProfundidade(int verticeInicial);
+	int obterNumeroDeComponentesConectados();
+	void buscaMenorCaminhoDjikstra(int verticeInicial);
 };
 
 #endif
