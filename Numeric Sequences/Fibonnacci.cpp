@@ -6,12 +6,15 @@ std::vector<unsigned long int> Fibonnacci::sequence;
 Fibonnacci::Fibonnacci()
 {
 	seq_size = 0;
+	seq_type = "Fibonnacci";
 }
 
 Fibonnacci::Fibonnacci(unsigned x)
 {
 	seq_size = x;
 	gen_elems(x);
+	seq_type = "Fibonnacci";
+
 }
 
 // Index starts at 1.

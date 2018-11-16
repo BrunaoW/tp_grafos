@@ -6,12 +6,16 @@ std::vector<unsigned long int> Lucas::sequence;
 Lucas::Lucas()
 {
 	seq_size = 0;
+	seq_type = "Lucas";
+
 }
 
 Lucas::Lucas(unsigned x)
 {
 	seq_size = x;
 	gen_elems(x);
+	seq_type = "Lucas";
+
 }
 
 // Index starts at 1.

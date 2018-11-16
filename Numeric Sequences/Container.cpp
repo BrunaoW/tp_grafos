@@ -16,21 +16,27 @@ void Container::printAny(Seq & obj, int min, int max)
 
 void Container::printSequences()
 {
-	for(int i = 0; i < sequences.size(); i++)
-		printAny( *(sequences[i]), 1, (sequences[i])->length() );
+	for (int i = 0; i < sequences.size(); i++)
+	{
+		std::cout << "\t" << (sequences[i])->seq_type << ": ";
+		printAny(*(sequences[i]), 1, (sequences[i])->length());
+	}
+		
 }
 
 void Container::printSequences(unsigned index)
 {
 	for (int i = 0; i < sequences.size(); i++)
 	{
+		std::cout << "\t" << (sequences[i])->seq_type << ": ";
+
 		if (index >=1 && index <= (sequences[i])->length())
 		{
 			printAny(*(sequences[i]), index, index);
 		}
 		else
 		{
-			std::cout << "Index "<< std::to_string(index) << "out of range \n";
+			std::cout << "Index "<< std::to_string(index) << " out of range \n";
 		}
 	}
 		
@@ -40,13 +46,15 @@ void Container::printSequences(unsigned min, unsigned max)
 {
 	for (int i = 0; i < sequences.size(); i++)
 	{
+		std::cout << "\t" << (sequences[i])->seq_type << ": ";
+
 		if (min >= 1 && i <= (sequences[min])->length() && max >= 1 && max <= (sequences[i])->length())
 		{
 			printAny(*(sequences[i]), min, max);
 		}
 		else
 		{
-			std::cout << "Index " << std::to_string(min) << " " << std::to_string(max) << "out of range \n";
+			std::cout << "Index " << std::to_string(min) << " " << std::to_string(max) << " out of range \n";
 		}
 	}
 }
